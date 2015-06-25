@@ -40,7 +40,7 @@ public class Main extends HttpServlet {
 
       List<NameValuePair> params = new ArrayList<NameValuePair>();
       params.add(new BasicNameValuePair("Body", "Jenny please?! I love you <3"));
-      params.add(new BasicNameValuePair("To", "+18438604210"));
+      params.add(new BasicNameValuePair("To", "+12025550113"));
       params.add(new BasicNameValuePair("From", "+14153001690"));
 
       MessageFactory messageFactory = client.getAccount().getMessageFactory();
