@@ -7,6 +7,18 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 
+import com.twilio.sdk.TwilioRestClient;
+import com.twilio.sdk.TwilioRestException;
+import com.twilio.sdk.resource.factory.MessageFactory;
+import com.twilio.sdk.resource.instance.Message;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -21,7 +33,22 @@ public class Main extends HttpServlet {
 
   private void showHome(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-    resp.getWriter().print("Hello from Java!");
+
+    try {
+      TwilioRestClient client = new TwilioRestClient(System.getenv("TWILIO_ACCOUNT_SID"),
+          System.getenv("TWILIO_AUTH_TOKEN"));
+
+      List<NameValuePair> params = new ArrayList<NameValuePair>();
+      params.add(new BasicNameValuePair("Body", "Jenny please?! I love you <3"));
+      params.add(new BasicNameValuePair("To", "+18438604210"));
+      params.add(new BasicNameValuePair("From", "+14153001690"));
+
+      MessageFactory messageFactory = client.getAccount().getMessageFactory();
+      Message message = messageFactory.create(params);
+      resp.getWriter().print("Sent message with ID: " + message.getSid());
+    } catch (TwilioRestException e) {
+      resp.getWriter().print("Encountered an exception: " + e.getMessage());
+    }
   }
 
   private void showDatabase(HttpServletRequest req, HttpServletResponse resp)
