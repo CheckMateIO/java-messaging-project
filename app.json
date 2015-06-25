@@ -1,0 +1,15 @@
+{
+  "name": "CheckMate Messaging (Java)",
+  "description": "A barebones CheckMate messaging application.",
+  "repository": "https://github.com/CheckMateIO/java-messaging-project",
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "The Twilio account SID",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "The Twilio auth token",
+      "required": true
+    }
+  }
+}
