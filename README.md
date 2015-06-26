@@ -48,7 +48,7 @@ You can run the application locally but Twilio will not be able to send SMS mess
 7. Run `foreman start web`
 8. Your app will now be running at [http://localhost:5000](http://localhost:5000).
 
-### Running on Heroku
+### Deploying to Heroku
 
 To enable easier end-to-end testing of the application on a public server that Twilio can access we will deploy to Heroku. You can do that easily by using the deploy button below.
 
