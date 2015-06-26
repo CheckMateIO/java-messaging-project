@@ -1,4 +1,4 @@
-## CheckMate's Java Engineer Coding Challenge
+# CheckMate's Java Engineer Coding Challenge
 
 One of the coolest parts of CheckMate's product is a direct messaging platform that lets guests and hotels communicate with each other via SMS and email.  Today we're going to build a simplified messaging program that will let a guest message a hotel directly. This will simulate a single hotel employee SMSing with a single guest.
 
@@ -19,15 +19,34 @@ Start building!  We'll let you choose how to build it.  Ensure you allocate time
 ### Retrospective (20-30 minutes)
 Let's talk about what you built and how you got there.
 
-### SMS Messaging
+## SMS Messaging
 
 We will be using the Twilio API (and their Java library) to enable SMS messaging
 with guests. This project is configured using Maven and includes the Twilio
 Java library. API credentials will be provided to you when needed.
 
+
+## Instructions
+
+### Running the application locally
+
+You can run the application locally but Twilio will not be able to send SMS messages to your system.
+
+1. Fork this repository in github.
+2. Clone your fork.
+3. Install the Heroku toolbelt: https://devcenter.heroku.com/articles/getting-started-with-java#set-up
+4. If Maven is not installed, `brew install maven`. If homebrew is not installed - install it.
+5. Run `mvn clean install`
+6. Configure ENV variables.
+  1. Create a .env file in the project root.
+  2. Add `TWILIO_ACCOUNT_SID=[account sid]`
+  3. Add `TWILIO_AUTH_TOKEN=[auth token]`
+  4. Save the file.
+7. Run `foreman start web`
+8. Your app will now be running at [http://localhost:5000](http://localhost:5000).
+
 ### Running on Heroku
 
-We will run the application on Heroku so that Twilio can deliver inbound SMS
-messages to the server.
+To enable easier end-to-end testing of the application on a public server that Twilio can access we will deploy to Heroku. You can do that easily by using the deploy button below.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
