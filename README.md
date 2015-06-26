@@ -7,24 +7,27 @@ One of the coolest parts of CheckMate's product is a direct messaging platform t
 * The chat interface should show messages from the hotel on the right side and messages from the "guest" on the left side very similar to iMessage or FB Messenger or… pretty much any chat client.
 * Each message should indicate who sent the message and when it was sent.
 * There should be a UI element at the bottom of the chat interface to send a new message to the guest.
+* Stretch goal: The incoming messages from the guest should show up live in the chat interface without requiring a refresh of the page.
 * The UI is pretty much up to you! This is not a front-end challenge so it is not expected to be amazing; functional is fine.
 
-### Phase One (15-20 minutes)
+#### Phase One (15-20 minutes)
 We'd like you to first whiteboard the layout/design that you think you'll build.
 
-### Phase Two (2 hours)
+#### Phase Two (2 hours)
 Start building!  We'll let you choose how to build it.  Ensure you allocate time for testing edge-cases such as:
 * Long messages from guests are split up by Twilio and delivered in an indeterminate order. We need these messages to be reconstructed into a single message with the proper ordering.
 
-### Retrospective (20-30 minutes)
+#### Retrospective (20-30 minutes)
 Let's talk about what you built and how you got there.
 
 ## SMS Messaging
 
-We will be using the Twilio API (and their Java library) to enable SMS messaging
-with guests. This project is configured using Maven and includes the Twilio
-Java library. API credentials will be provided to you when needed.
+You will use the Twilio API (and their Java library) to enable outbound/inbound
+SMS messaging with guests. This project is configured using Maven and includes
+the Twilio Java library already. API credentials will be provided to you as
+needed.
 
+[Twilio Java SMS Messaging Quickstart](https://www.twilio.com/docs/quickstart/java/sms)
 
 ## Instructions
 
